@@ -1,0 +1,1 @@
+/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/catkin_tools_prebuild/env.sh

@@ -1,0 +1,6 @@
+devel_space: /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel
+install: false
+install_space: /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/install
+profile: default
+source_space: /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/src
+workspace: /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws
