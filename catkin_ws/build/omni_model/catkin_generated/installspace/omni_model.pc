@@ -1,0 +1,8 @@
+prefix=/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/install
+
+Name: omni_model
+Description: Description of omni_model
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/install/lib 
+Requires: 

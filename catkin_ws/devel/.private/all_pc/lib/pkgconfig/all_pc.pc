@@ -1,0 +1,8 @@
+prefix=/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/all_pc
+
+Name: all_pc
+Description: Description of all_pc
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/all_pc/lib 
+Requires: 

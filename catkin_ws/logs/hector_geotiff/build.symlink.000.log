@@ -1,0 +1,6 @@
+Symlinking /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/lib/libgeotiff_writer.so
+Symlinking /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/lib/hector_geotiff/geotiff_saver
+Symlinking /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/lib/hector_geotiff/geotiff_node
+Symlinking /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/lib/pkgconfig/hector_geotiff.pc
+Symlinking /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/share/hector_geotiff/cmake/hector_geotiffConfig.cmake
+Symlinking /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/share/hector_geotiff/cmake/hector_geotiffConfig-version.cmake

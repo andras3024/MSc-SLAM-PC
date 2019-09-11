@@ -1,0 +1,5 @@
+hector_slam/hector_geotiff_plugins
+/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/hector_geotiff_plugins/lib/libhector_geotiff_plugins.so /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/lib/libhector_geotiff_plugins.so
+/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/hector_geotiff_plugins/lib/pkgconfig/hector_geotiff_plugins.pc /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/lib/pkgconfig/hector_geotiff_plugins.pc
+/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/hector_geotiff_plugins/share/hector_geotiff_plugins/cmake/hector_geotiff_pluginsConfig.cmake /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/share/hector_geotiff_plugins/cmake/hector_geotiff_pluginsConfig.cmake
+/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/hector_geotiff_plugins/share/hector_geotiff_plugins/cmake/hector_geotiff_pluginsConfig-version.cmake /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/share/hector_geotiff_plugins/cmake/hector_geotiff_pluginsConfig-version.cmake

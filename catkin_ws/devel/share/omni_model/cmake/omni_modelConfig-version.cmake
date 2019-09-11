@@ -1,0 +1,1 @@
+/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/omni_model/share/omni_model/cmake/omni_modelConfig-version.cmake

@@ -1,0 +1,1 @@
+/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/all_pc/share/all_pc/cmake/all_pcConfig.cmake
