@@ -1,1 +1,0 @@
-/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/hector_mapping/share/hector_mapping/cmake/hector_mappingConfig.cmake

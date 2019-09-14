@@ -1,1 +1,0 @@
-/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/hector_geotiff_plugins/lib/pkgconfig/hector_geotiff_plugins.pc

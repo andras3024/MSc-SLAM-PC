@@ -1,8 +1,0 @@
-prefix=/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/slam_rviz
-
-Name: slam_rviz
-Description: Description of slam_rviz
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/slam_rviz/lib 
-Requires: 

@@ -1,4 +1,0 @@
-hector_slam/hector_slam_launch
-/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/hector_slam_launch/lib/pkgconfig/hector_slam_launch.pc /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/lib/pkgconfig/hector_slam_launch.pc
-/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/hector_slam_launch/share/hector_slam_launch/cmake/hector_slam_launchConfig-version.cmake /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/share/hector_slam_launch/cmake/hector_slam_launchConfig-version.cmake
-/home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/.private/hector_slam_launch/share/hector_slam_launch/cmake/hector_slam_launchConfig.cmake /home/landrasu/Documents/GitHub/MSc-SLAM-PC/catkin_ws/devel/share/hector_slam_launch/cmake/hector_slam_launchConfig.cmake

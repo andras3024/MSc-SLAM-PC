@@ -1,0 +1,11 @@
+<launch>
+	<include file="$(find razor_imu_9dof)/launch/razor-display.launch"/>
+
+	<!--<include file="$(find teleop_twist_joy)/launch/teleop.launch"/>-->
+
+	<node name="PCteleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" launch-prefix="gnome-terminal -e"/>
+
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find all_pc)/rviz/all_pc.rviz" />
+
+</launch>
+
