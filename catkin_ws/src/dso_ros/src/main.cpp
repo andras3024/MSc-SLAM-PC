@@ -35,7 +35,7 @@
 #include "FullSystem/FullSystem.h"
 #include "util/Undistort.h"
 #include "IOWrapper/Pangolin/PangolinDSOViewer.h"
-#include "IOWrapper/OutputWrapper/SampleOutputWrapper.h"
+#include "ROSOutputWrapper.h"
 
 
 #include <ros/ros.h>
@@ -50,7 +50,7 @@ std::string calib = "";
 std::string vignetteFile = "";
 std::string gammaFile = "";
 std::string saveFile = "";
-bool useSampleOutput=false;
+bool useSampleOutput=true;
 
 using namespace dso;
 
@@ -194,6 +194,7 @@ int main( int argc, char** argv )
 	setting_minOptIterations=1;
 	setting_logStuff = false;
 	setting_kfGlobalWeight = 1.3;
+	setting_debugout_runquiet = true;
 
 
 	printf("MODE WITH CALIBRATION, but without exposure times!\n");
