@@ -2,4 +2,4 @@
 /catkin_ws/devel
 /catkin_ws/.catkin_tools
 /catkin_ws/logs
-/catkin_ws/src/dso_ros
+/catkin_ws/src/orb_slam_2_ros
