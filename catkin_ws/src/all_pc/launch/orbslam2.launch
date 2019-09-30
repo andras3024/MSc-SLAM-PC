@@ -1,0 +1,6 @@
+<launch>
+	<include file="$(find orb_slam2_ros)/ros/launch/orb_slam2_raspicam.launch"/>
+	<!--<node name="PCteleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" launch-prefix="gnome-terminal -e"/>-->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find all_pc)/rviz/orbslam2.rviz" />
+</launch>
+

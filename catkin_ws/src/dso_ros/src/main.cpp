@@ -50,7 +50,8 @@ std::string calib = "";
 std::string vignetteFile = "";
 std::string gammaFile = "";
 std::string saveFile = "";
-bool useSampleOutput=true;
+bool compressed=false;
+bool useSampleOutput=false;
 
 using namespace dso;
 
@@ -134,6 +135,16 @@ void parseArgument(char* arg)
 		return;
 	}
 
+	if(1==sscanf(arg,"compressed=%d",&option))
+	{
+		if(option==1)
+		{
+			compressed = true;
+			printf("USING COMPRESSED IMAGE!\n");
+		}
+		return;
+	}
+
 	printf("could not parse argument \"%s\"!!\n", arg);
 }
 
@@ -174,6 +185,34 @@ void vidCb(const sensor_msgs::ImageConstPtr img)
 }
 
 
+void vidComprCb(const sensor_msgs::CompressedImageConstPtr img)
+{
+	cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(img, sensor_msgs::image_encodings::MONO8);
+	assert(cv_ptr->image.type() == CV_8U);
+	assert(cv_ptr->image.channels() == 1);
+
+
+	if(setting_fullResetRequested)
+	{
+		std::vector<IOWrap::Output3DWrapper*> wraps = fullSystem->outputWrapper;
+		delete fullSystem;
+		for(IOWrap::Output3DWrapper* ow : wraps) ow->reset();
+		fullSystem = new FullSystem();
+		fullSystem->linearizeOperation=false;
+		fullSystem->outputWrapper = wraps;
+	    if(undistorter->photometricUndist != 0)
+	    	fullSystem->setGammaFunction(undistorter->photometricUndist->getG());
+		setting_fullResetRequested=false;
+	}
+
+	MinimalImageB minImg((int)cv_ptr->image.cols, (int)cv_ptr->image.rows,(unsigned char*)cv_ptr->image.data);
+	ImageAndExposure* undistImg = undistorter->undistort<unsigned char>(&minImg, 1,0, 1.0f);
+	undistImg->timestamp=img->header.stamp.toSec(); // relay the timestamp to dso
+	fullSystem->addActiveFrame(undistImg, frameID);
+	frameID++;
+	delete undistImg;
+}
+
 
 
 
@@ -204,44 +243,46 @@ int main( int argc, char** argv )
 
 
 
-    undistorter = Undistort::getUndistorterForFile(calib, gammaFile, vignetteFile);
+	undistorter = Undistort::getUndistorterForFile(calib, gammaFile, vignetteFile);
 
-    setGlobalCalib(
-            (int)undistorter->getSize()[0],
-            (int)undistorter->getSize()[1],
-            undistorter->getK().cast<float>());
-
-
-    fullSystem = new FullSystem();
-    fullSystem->linearizeOperation=false;
+	setGlobalCalib(
+	    (int)undistorter->getSize()[0],
+	    (int)undistorter->getSize()[1],
+	    undistorter->getK().cast<float>());
 
 
-    if(!disableAllDisplay)
-	    fullSystem->outputWrapper.push_back(new IOWrap::PangolinDSOViewer(
+	fullSystem = new FullSystem();
+	fullSystem->linearizeOperation=false;
+
+
+	if(!disableAllDisplay)
+		fullSystem->outputWrapper.push_back(new IOWrap::PangolinDSOViewer(
 	    		 (int)undistorter->getSize()[0],
 	    		 (int)undistorter->getSize()[1]));
 
 
-    if(useSampleOutput)
-        fullSystem->outputWrapper.push_back(new IOWrap::SampleOutputWrapper());
+	if(useSampleOutput)
+		fullSystem->outputWrapper.push_back(new IOWrap::SampleOutputWrapper());
 
 
-    if(undistorter->photometricUndist != 0)
-    	fullSystem->setGammaFunction(undistorter->photometricUndist->getG());
+	if(undistorter->photometricUndist != 0)
+		fullSystem->setGammaFunction(undistorter->photometricUndist->getG());
 
-    ros::NodeHandle nh;
-    ros::Subscriber imgSub = nh.subscribe("image", 1, &vidCb);
+	ros::NodeHandle nh;
 
-    ros::spin();
-    fullSystem->printResult(saveFile); 
-    for(IOWrap::Output3DWrapper* ow : fullSystem->outputWrapper)
-    {
-        ow->join();
-        delete ow;
-    }
+	printf("SUBSCRIBED TO COMPRESSED IMAGE!\n");
+	ros::Subscriber imgSub = nh.subscribe("/raspicam_node/image/compressed", 1, &vidComprCb);
 
-    delete undistorter;
-    delete fullSystem;
+	ros::spin();
+	fullSystem->printResult(saveFile); 
+	for(IOWrap::Output3DWrapper* ow : fullSystem->outputWrapper)
+	{
+		ow->join();
+		delete ow;
+	}
+
+	delete undistorter;
+	delete fullSystem;
 
 	return 0;
 }

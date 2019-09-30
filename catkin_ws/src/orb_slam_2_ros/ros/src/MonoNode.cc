@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 
 
 MonoNode::MonoNode (ORB_SLAM2::System::eSensor sensor, ros::NodeHandle &node_handle, image_transport::ImageTransport &image_transport) : Node (sensor, node_handle, image_transport) {
-  image_subscriber = image_transport.subscribe ("/camera/image_raw", 1, &MonoNode::ImageCallback, this);
+  image_subscriber = image_transport.subscribe ("/raspicam_node/image/compressed", 1, &MonoNode::ImageCallback, this);
 }
 
 

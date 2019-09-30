@@ -1,0 +1,5 @@
+<launch>
+	<node name="PCteleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" />
+	<!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find all_pc)/rviz/dso.rviz" />-->
+</launch>
+
