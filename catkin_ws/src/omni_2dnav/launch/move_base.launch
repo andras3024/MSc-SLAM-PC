@@ -4,7 +4,9 @@
         <rosparam file="$(find omni_2dnav)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
         <rosparam file="$(find omni_2dnav)/params/local_costmap_params.yaml" command="load" />
         <rosparam file="$(find omni_2dnav)/params/global_costmap_params.yaml" command="load" />
-        <rosparam file="$(find omni_2dnav)/params/base_local_planner_params.yaml" command="load" />
+        <rosparam file="$(find omni_2dnav)/params/dwa_local_planner_params.yaml" command="load" />
 	<param name = "controller_frequency" value = "10" />
+	<param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+	<remap from="scan_multi" to="scan"/>
     </node>
 </launch>
