@@ -1,0 +1,10 @@
+<launch>r
+	<!-- Run teleop -->
+	<!--<include file="$(find teleop_twist_joy)/launch/teleop.launch"/>-->
+	<node name="PCteleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" launch-prefix="gnome-terminal -e"/>
+
+	<!-- Run rviz -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find all_pc)/rviz/odometry.rviz" />
+
+</launch>
+
