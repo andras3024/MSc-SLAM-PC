@@ -1,5 +1,5 @@
 <launch>
-	<include file="$(find orb_slam2_ros)/ros/launch/orb_slam2_raspicam.launch"/>
+	<!--<include file="$(find orb_slam2_ros)/ros/launch/orb_slam2_raspicam.launch"/>-->
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find all_pc)/rviz/orbslam2.rviz" />
 </launch>
 

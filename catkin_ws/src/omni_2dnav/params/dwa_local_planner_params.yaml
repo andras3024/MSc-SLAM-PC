@@ -12,4 +12,8 @@ DWAPlannerROS:
  acc_lim_theta: 0.5
  acc_lim_x: 0.5
  acc_lim_y: 0.5
-
+ xy_goal_tolerance: 0.05
+ sim_time: 2.2
+ vx_samples: 20
+ vy_samples: 20
+ vth_samples: 40

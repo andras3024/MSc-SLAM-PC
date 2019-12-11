@@ -6,7 +6,7 @@
 	<!-- Run rviz -->
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find all_pc)/rviz/gmapping.rviz" />
 
-	<!-- Run gmapping -->
+	<!-- Run gmapping 
 	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping_node">
 		<param name="particles" value="100"/>
 		<param name="maxUrange" value="11.0"/>
@@ -23,7 +23,7 @@
 		<param name="ymin" value="-10.0"/>
 		<param name="xmax" value="10.0"/>
 		<param name="ymax" value="10.0"/>
-	</node>
+	</node>-->
 
 	<!-- run pointcloud_to_laserscan node -->
 	<!--<node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">

@@ -1,0 +1,14 @@
+<launch>
+	<!-- start the laser scan_matcher -->
+	<node pkg="laser_scan_matcher" type="laser_scan_matcher_node" 
+	name="laser_scan_matcher_node" output="screen">
+		<remap from="cmd_vel" to="vel"/>
+		<param name="use_odom"        value="false"/>
+		<param name="use_vel"        value="false"/>
+		<param name="publish_pose_stamped" value="true"/>
+	</node>
+
+	<!-- Run rviz -->
+	<!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find all_pc)/rviz/odometry.rviz" />-->
+
+</launch>
